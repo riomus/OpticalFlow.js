@@ -10,7 +10,7 @@ A JavaScript library by Roman Bartusiak.
 
 Using Bower:
 
-    bower install OpticalFlow.js
+    bower install optical-flow.js
 
 Or grab the [source](https://github.com/riomus/OpticalFlow.js/dist/OpticalFlow.js) ([minified](https://github.com/riomus/OpticalFlow.js/dist/OpticalFlow.min.js)).
 
