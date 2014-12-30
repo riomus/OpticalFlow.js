@@ -1,4 +1,4 @@
-(function(root,_, undefined) {
+(function(root, undefined) {
 
   "use strict";
 
@@ -13,8 +13,9 @@ var OpticalFlow = function(providedConfig){
       alpha:5,
       iterations:2
     };
-
-    _.extend( this.config,providedConfig);
+    for (var attrname in providedConfig)  {
+        this.config[attrname] = providedConfig[attrname];
+    }
 
     var convertToBWFrames=function(frames){
       var framesBW=[];
@@ -28,13 +29,13 @@ var OpticalFlow = function(providedConfig){
         framesBW[frameIndex]=frameBW;
       }
       return framesBW;
-    };
+    }.bind(this);
 
 
 
     var calculateIndexFromCoordinatesForBW=function(x,y){
       return (x + y * this.config.width);
-    };
+    }.bind(this);
 
     var initializeEmptyFlowMatix=function(xFlow,yFlow){
       var width=+this.config.width;
@@ -47,7 +48,7 @@ var OpticalFlow = function(providedConfig){
           yFlow[x][y]=0;
         }
       }
-    };
+    }.bind(this);
 
     this.getFlowData=function(frames){
       var framesBW=convertToBWFrames(frames);
@@ -118,4 +119,4 @@ OpticalFlow.VERSION = '0.0.1';
 root.OpticalFlow = OpticalFlow;
 
 
-}(this,this._));
+}(this));

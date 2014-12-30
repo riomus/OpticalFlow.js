@@ -6,8 +6,6 @@ Optical Flow implementation
 
 A JavaScript library by Roman Bartusiak.
 
-See the [project homepage](http://riomus.github.io/OpticalFlow.js).
-
 ## Installation
 
 Using Bower:
@@ -20,23 +18,8 @@ Or grab the [source](https://github.com/riomus/OpticalFlow.js/dist/OpticalFlow.j
 
 Basic usage is as follows:
 
-    OpticalFlow();
-
-For advanced usage, see the documentation.
-
-## Documentation
-
-Start with `docs/MAIN.md`.
-
-## Contributing
-
-We'll check out your contribution if you:
-
-* Provide a comprehensive suite of tests for your fork.
-* Have a clear and documented rationale for your changes.
-* Package these up in a pull request.
-
-We'll do our best to help you out with any contribution issues you may have.
+    var opticalFlow=new OpticalFlow(config);
+    var flowData=opticalFlow.getFlowData([frame1,frame2]);
 
 ## License
 

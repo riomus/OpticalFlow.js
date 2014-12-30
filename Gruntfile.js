@@ -3,16 +3,20 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
-
+    serve: {
+      options: {
+        port: 9000
+      }
+    },
     concat: {
       options: {
         separator: "\n\n"
       },
       dist: {
         src: [
-          'src/_intro.js',
-          'src/main.js',
-          'src/_outro.js'
+        'src/_intro.js',
+        'src/main.js',
+        'src/_outro.js'
         ],
         dest: 'dist/<%= pkg.name.replace(".js", "") %>.js'
       }
@@ -52,13 +56,13 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-
-  grunt.registerTask('test', ['jshint', 'qunit']);
-  grunt.registerTask('default', ['concat', 'jshint', 'qunit', 'uglify']);
+grunt.loadNpmTasks('grunt-contrib-uglify');
+grunt.loadNpmTasks('grunt-contrib-jshint');
+grunt.loadNpmTasks('grunt-contrib-qunit');
+grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-contrib-concat');
+grunt.loadNpmTasks('grunt-serve');
+grunt.registerTask('test', ['jshint', 'qunit']);
+grunt.registerTask('default', ['concat', 'jshint', 'qunit', 'uglify']);
 
 };
