@@ -60,7 +60,7 @@ module.exports = function(grunt) {
       gitAdd: true,
       gitCommit: false,
       gitPush: false,
-      gitTag: true,
+      gitTag: false,
       gitPushTag: false,
       npm: false
     },

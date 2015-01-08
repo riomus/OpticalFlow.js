@@ -112,7 +112,7 @@ var OpticalFlow = function(providedConfig){
   };
 
 // Version.
-OpticalFlow.VERSION = '0.0.4';
+OpticalFlow.VERSION = '0.0.5';
 
 
 // Export to the root, which is probably `window`.
