@@ -1,6 +1,6 @@
 {
 	"name": "OpticalFlow.js",
-	"version": "0.0.5",
+	"version": "0.0.7",
 	"main": "dist/OpticalFlow.min.js",
 	"ignore": [
 		"**/.*",
