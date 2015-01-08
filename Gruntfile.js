@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     },
     concat: {
       options: {
-        separator: "\n\n"
+        separator: '\n\n'
       },
       dist: {
         src: [
@@ -54,50 +54,33 @@ module.exports = function(grunt) {
       tasks: ['concat', 'jshint', 'qunit']
     },
     versioner: {
-      options: {
-        bump: true,
-        file: 'package.json',
-        gitAdd: true,
-        gitCommit: true,
-        gitPush: true,
-        gitTag: true,
-        gitPushTag: true,
-        gitDescribeOptions: '--tags --always --dirty=-d',
-        tagPrefix: 'v',
-        commitMessagePrefix: 'Release: ',
-        tagMessagePrefix: 'Version: ',
-        readmeText: 'Current Version:',
-        pushTo: 'origin',
-        branch: 'master',
-        npm: true,
-        mode: 'production',
-        configs: []
-      },
-      default:{
-        files: {
-          './package.json': ['./package.json'],
-          './bower.json': ['./bower.json'],
-          './README.md': ['./README.md'],
-          './src/main.js': ['./src/main.js']
-        }
-      },
-      patch: {
-        options: {
-          file: './VERSION'
-        },
-        src: ['./package.json', './bower.json', './README.md']
+    options: {
+      bump: true,
+      file: 'package.json',
+      gitAdd: true,
+      gitCommit: false,
+      gitPush: false,
+      gitTag: true,
+      gitPushTag: false,
+      npm: false
+    },
+    default: {
+      files: {
+        './package.json': ['./package.json'],
+        './bower.json': ['./bower.json'],
+        './README.md': ['./README.md'],
+        './src/main.js': ['./src/main.js']
       }
     }
-
+  }
   });
-
 grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-contrib-qunit');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-concat');
-grunt.loadNpmTasks('grunt-versioner');
 grunt.loadNpmTasks('grunt-serve');
+grunt.loadNpmTasks('grunt-versioner');
 grunt.registerTask('test', ['jshint', 'qunit']);
 grunt.registerTask('default', ['concat', 'jshint', 'qunit', 'uglify']);
 

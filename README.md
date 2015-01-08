@@ -6,7 +6,7 @@ Optical Flow implementation
 
 A JavaScript library by Roman Bartusiak.
 
-Current Version: **[0.0.1](https://github.com/riomus/OpticalFlow.js/tag/v0.0.1)**
+Current Version: **[0.0.4](https://github.com/riomus/OpticalFlow.js/tag/v0.0.4)**
 
 ## Installation
 
